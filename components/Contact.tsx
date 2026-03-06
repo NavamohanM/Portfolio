@@ -45,8 +45,8 @@ const socialLinks = [
   {
     Icon: Award,
     label: 'Certifications',
-    sub: 'Google Drive',
-    href: 'https://drive.google.com/drive/folders/1ZPH_K0w8dg5rP9NDV6Zaj-kUxPhTAI58?usp=drive_link',
+    sub: 'navamohan-certificates.netlify.app',
+    href: 'https://navamohan-certificates.netlify.app/',
     color: 'purple' as const,
   },
 ]
