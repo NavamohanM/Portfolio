@@ -106,7 +106,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.35 }}
           className="text-xl sm:text-2xl md:text-3xl text-slate-300 font-semibold mb-6"
         >
-          AI Engineer &amp; Full-Stack Developer
+          AI Engineer | Full-Stack Developer
         </motion.h2>
 
         <motion.p
@@ -115,8 +115,8 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-slate-400 text-base sm:text-lg mb-10 max-w-2xl mx-auto leading-relaxed"
         >
-          Final-year CSE student at GCT Coimbatore. Building intelligent systems with Knowledge Graphs,
-          Vector Embeddings, and real-time full-stack applications.
+          Computer Science graduate from GCT Coimbatore passionate about building intelligent systems
+          using Knowledge Graphs, vector embeddings, and scalable web applications.
         </motion.p>
 
         <motion.div

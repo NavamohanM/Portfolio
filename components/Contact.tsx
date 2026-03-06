@@ -143,7 +143,7 @@ export default function Contact() {
         viewport={{ once: true }}
         className="mt-20 text-center border-t border-white/5 pt-8"
       >
-        <p className="text-slate-600 text-xs">© 2025 Navamohan M. All rights reserved.</p>
+        <p className="text-slate-600 text-xs">© 2026 Navamohan M. All rights reserved.</p>
       </motion.div>
     </section>
   )

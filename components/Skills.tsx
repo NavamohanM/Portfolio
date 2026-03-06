@@ -26,7 +26,7 @@ const categories = [
     label: 'Frameworks & Libraries',
     Icon: Layers,
     color: 'purple' as const,
-    skills: ['React', 'Bootstrap', 'WebRTC', 'Knuckles', 'Tailwind CSS'],
+    skills: ['React', 'Bootstrap', 'WebRTC', 'Knuckles (AI Framework)', 'Chart.js'],
   },
   {
     label: 'Tools',

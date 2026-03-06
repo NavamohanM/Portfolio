@@ -1,13 +1,22 @@
 'use client'
 
+import React from 'react'
 import { motion } from 'framer-motion'
-import { Github, MessageSquare, Lock, BarChart3, ExternalLink } from 'lucide-react'
+import { Github, MessageSquare, Lock, BarChart3, ExternalLink, Globe } from 'lucide-react'
 
-const projects = [
+const projects: {
+  title: string
+  description: string
+  tech: string[]
+  github: string
+  live?: string
+  Icon: React.ElementType
+  color: 'cyan' | 'purple'
+}[] = [
   {
     title: 'Real-Time Chat Application',
     description:
-      'WhatsApp-inspired full-stack chat app with PHP backend, Supabase (PostgreSQL) cloud database, and WebSocket broadcast channels for instant real-time message delivery. Supports WebRTC voice & video calling, 17+ REST APIs, emoji reactions, read receipts, file uploads (25MB), and offline message queue.',
+      'WhatsApp-inspired full-stack chat app with PHP backend, Supabase (PostgreSQL), WebSocket channels, WebRTC voice & video calling, and 17+ REST APIs for messaging, file uploads, emoji reactions, and typing indicators. Secured with bcrypt, CSRF tokens, and rate limiting. Supports voice messages, offline queue, browser notifications, link previews, and message search.',
     tech: ['PHP', 'JavaScript', 'Supabase', 'WebRTC', 'HTML', 'CSS'],
     github: 'https://github.com/NavamohanM/Chat-app',
     Icon: MessageSquare,
@@ -25,9 +34,10 @@ const projects = [
   {
     title: 'Stock Inventory Management',
     description:
-      'Responsive full-stack inventory system with React dynamic UI and PHP backend. Features real-time stock tracking, CRUD operations, search and filtering, and cross-browser compatible design using Bootstrap.',
-    tech: ['React', 'PHP', 'JavaScript', 'Bootstrap'],
+      'Production-deployed full-stack inventory system with role-based access (Admin/Staff), ACID-safe Purchase & Sales management, per-product low-stock alerts, and SKU support. Features an analytics dashboard with 3 live Chart.js charts (revenue, stock distribution, units-sold), date-range filters, CSV export, and real-time low-stock navbar badge. Secured with bcrypt, CSRF tokens, prepared statements, and session regeneration.',
+    tech: ['PHP 8.3', 'MySQL', 'Bootstrap 5', 'Chart.js', 'Railway'],
     github: 'https://github.com/NavamohanM/Stock-Inventory-Management',
+    live: 'https://stock-inventory-management.up.railway.app/login.php',
     Icon: BarChart3,
     color: 'cyan' as const,
   },
@@ -77,21 +87,38 @@ export default function Projects() {
               ))}
             </div>
 
-            {/* GitHub link */}
-            <a
-              href={proj.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-sm font-medium transition-all duration-300 ${
-                proj.color === 'cyan'
-                  ? 'neon-btn text-cyan-300'
-                  : 'neon-btn-purple text-purple-300'
-              }`}
-            >
-              <Github size={16} />
-              View on GitHub
-              <ExternalLink size={14} className="opacity-60" />
-            </a>
+            {/* Links */}
+            <div className="flex gap-2">
+              <a
+                href={proj.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-sm font-medium transition-all duration-300 ${
+                  proj.color === 'cyan'
+                    ? 'neon-btn text-cyan-300'
+                    : 'neon-btn-purple text-purple-300'
+                }`}
+              >
+                <Github size={16} />
+                GitHub
+                <ExternalLink size={14} className="opacity-60" />
+              </a>
+              {proj.live && (
+                <a
+                  href={proj.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-sm font-medium transition-all duration-300 ${
+                    proj.color === 'cyan'
+                      ? 'neon-btn text-cyan-300'
+                      : 'neon-btn-purple text-purple-300'
+                  }`}
+                >
+                  <Globe size={16} />
+                  Live Demo
+                </a>
+              )}
+            </div>
           </motion.div>
         ))}
       </div>
